@@ -1,0 +1,27 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for more information:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+# https://containers.dev/guide/dependabot
+
+version: 2
+updates:
+  # Configuração para gemas do repositório privado
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "hourly"
+    registries:
+      - github-registry
+
+  # Configuração para gemas do repositório público
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+registries:
+  github-registry:
+    type: "rubygems"
+    url: "https://rubygems.pkg.github.com/om30"
+    token: "${{ secrets.TOKEN_GITHUB }}"

@@ -1,0 +1,30 @@
+default: &default
+  saude_simples_legacy_url: <%= ENV['LEGACY_BASE_URL'] || 'https://desenvolvimento.om30.cloud' %>
+  saude_simples_frontend_url: <%= ENV['SAUDE_SIMPLES_FRONTEND_URL'] %>
+  saude_simples_auth_api_base_url: <%= ENV['AUTH_API_BASE_URL'] %>
+  cep_simples_api_url: <%= ENV['CEP_SIMPLES_API_URL'] %>
+  cep_simples_api_key: <%= ENV['CEP_SIMPLES_API_KEY'] %>
+  importacao_cnes_api_url: 'https://saudesimples-importacao-cnes-api.qa.om30.cloud'
+  integracao_sigtap_api_url: 'https://saudesimples-integracao-sigtap.qa.om30.cloud'
+
+development:
+  <<: *default
+  active_storage_service: <%= ENV['ACTIVE_STORAGE_SERVICE'] || 'local' %>
+  google_project: 'prj-om30-bossabox-development'
+  google_bucket: 'upload-ss-om30-dev'
+  google_account: 'ss-unidade-saude-api-dev@prj-om30-bossabox-development.iam.gserviceaccount.com'
+
+test:
+  <<: *default
+
+staging:
+  <<: *default
+  google_project: 'prj-om30-bossabox-staging'
+  google_bucket: 'upload-ss-om30-stg'
+  google_account: 'ss-unidade-saude-api-stg@prj-om30-bossabox-staging.iam.gserviceaccount.com'
+  # saude_simples_legacy_url: 'https://homologacao.saudesimples.net'
+
+production:
+  <<: *default
+  saude_simples_legacy_url: 'https://saudesimples.net'
+  importacao_cnes_api_url: ''

@@ -1,0 +1,36 @@
+#!/usr/bin/env sh
+
+if [ -z ${HOME_APP} ]; then
+  export HOME_APP="/home/app"
+fi
+
+if [ -z ${BUNDLE_PATH} ]; then
+  export BUNDLE_PATH="${HOME_APP}/vendor/gems"
+fi
+
+# Ensure that the .env file will not be loaded in Rails environment
+if [ -e ".env" ] ; then
+  rm .env
+fi
+
+if [ -f tmp/pids/server.pid ]; then
+  rm tmp/pids/server.pid
+fi
+
+echo "Loading dependencies..."
+bundle config set clean true
+bundle config set path ${BUNDLE_PATH}
+bundle check || bundle install --jobs=$(nproc) --retry=5
+bundle update autenticacao-gem saudesimples-core --conservative
+
+echo "Preparing database..."
+bundle exec rails db:create db:migrate db:seed
+
+echo "Preparing tests database..."
+RAILS_ENV=test bundle exec rails db:drop db:create db:schema:load db:migrate
+
+echo "Starting sidekiq..."
+supervisord -c /home/app/supervisord.conf
+
+echo "Starting server..."
+bundle exec rails s --port 3001 -b 0.0.0.0

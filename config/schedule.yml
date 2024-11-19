@@ -1,0 +1,16 @@
+#Este job roda dia 1 em todos os meses as 06:00 a integração Sigtap de ocupações
+upsert_ocupacoes_sigtap_job:
+  cron: "0 6 1 * *"
+  class: "UpsertOcupacoesSigtapJob"
+  args:
+    page: 1
+    per_page: 100
+  queue: default
+
+upsert_equipes_from_cnes_job:
+  cron: "0 1 2 * *"
+  class: "SyncEquipesWithCNESJob"
+  description: "Esse job atualiza os registros de equipes baseado na integração com o CNES: https://www.notion.so/bossabox/Cron-Jobs-96bfece73719448c81c8c44317107046?pvs=4#1369a862cc0b4c0892c08ea7b9d051d1"
+  args:
+    - 1
+  queue: default

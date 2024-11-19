@@ -1,0 +1,157 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://saudesimples-integracao-sigtap.qa.om30.cloud/api/v1/ocupacoes?page=1&per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Faraday v2.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 19 Jul 2024 20:09:11 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '17193'
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Accept, Origin
+      Etag:
+      - etag
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - x-request-id
+      X-Runtime:
+      - '0.150234'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.03, sql.active_record;dur=8.73, instantiation.active_record;dur=110.68,
+        process_action.action_controller;dur=135.28
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers:
+      - access-control-expose-headers
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"data":{"ocupacoes":[{"id":1,"codigo_ocupacao":"010105","nome_ocupacao":"Oficial
+        General da Aeronáutica","created_at":"2024-07-16T00:50:18.808Z","updated_at":"2024-07-16T00:50:18.808Z"},{"id":2,"codigo_ocupacao":"010110","nome_ocupacao":"Oficial
+        General do Exército","created_at":"2024-07-16T00:50:18.821Z","updated_at":"2024-07-16T00:50:18.821Z"},{"id":3,"codigo_ocupacao":"010115","nome_ocupacao":"Oficial
+        General da Marinha","created_at":"2024-07-16T00:50:18.832Z","updated_at":"2024-07-16T00:50:18.832Z"},{"id":4,"codigo_ocupacao":"010205","nome_ocupacao":"Oficial
+        da Aeronáutica","created_at":"2024-07-16T00:50:18.843Z","updated_at":"2024-07-16T00:50:18.843Z"},{"id":5,"codigo_ocupacao":"010210","nome_ocupacao":"Oficial
+        do Exército","created_at":"2024-07-16T00:50:18.856Z","updated_at":"2024-07-16T00:50:18.856Z"},{"id":6,"codigo_ocupacao":"010215","nome_ocupacao":"Oficial
+        da Marinha","created_at":"2024-07-16T00:50:18.913Z","updated_at":"2024-07-16T00:50:18.913Z"},{"id":7,"codigo_ocupacao":"010305","nome_ocupacao":"Praça
+        da Aeronáutica","created_at":"2024-07-16T00:50:18.924Z","updated_at":"2024-07-16T00:50:18.924Z"},{"id":8,"codigo_ocupacao":"010310","nome_ocupacao":"Praça
+        do Exército","created_at":"2024-07-16T00:50:18.935Z","updated_at":"2024-07-16T00:50:18.935Z"},{"id":9,"codigo_ocupacao":"010315","nome_ocupacao":"Praça
+        da Marinha","created_at":"2024-07-16T00:50:18.957Z","updated_at":"2024-07-16T00:50:18.957Z"},{"id":10,"codigo_ocupacao":"020105","nome_ocupacao":"Coronel
+        da Polícia Militar","created_at":"2024-07-16T00:50:19.008Z","updated_at":"2024-07-16T00:50:19.008Z"},{"id":11,"codigo_ocupacao":"020110","nome_ocupacao":"Tenente-Coronel
+        da Polícia Militar","created_at":"2024-07-16T00:50:19.021Z","updated_at":"2024-07-16T00:50:19.021Z"},{"id":12,"codigo_ocupacao":"020115","nome_ocupacao":"Major
+        da Polícia Militar","created_at":"2024-07-16T00:50:19.031Z","updated_at":"2024-07-16T00:50:19.031Z"},{"id":13,"codigo_ocupacao":"020205","nome_ocupacao":"Capitão
+        da Polícia Militar","created_at":"2024-07-16T00:50:19.044Z","updated_at":"2024-07-16T00:50:19.044Z"},{"id":14,"codigo_ocupacao":"020305","nome_ocupacao":"Primeiro
+        Tenente de Polícia Militar","created_at":"2024-07-16T00:50:19.055Z","updated_at":"2024-07-16T00:50:19.055Z"},{"id":15,"codigo_ocupacao":"020310","nome_ocupacao":"Segundo
+        Tenente de Polícia Militar","created_at":"2024-07-16T00:50:19.113Z","updated_at":"2024-07-16T00:50:19.113Z"},{"id":16,"codigo_ocupacao":"021105","nome_ocupacao":"Subtenente
+        da Polícia Militar","created_at":"2024-07-16T00:50:19.123Z","updated_at":"2024-07-16T00:50:19.123Z"},{"id":17,"codigo_ocupacao":"021110","nome_ocupacao":"Sargento
+        da Polícia Militar","created_at":"2024-07-16T00:50:19.134Z","updated_at":"2024-07-16T00:50:19.134Z"},{"id":18,"codigo_ocupacao":"021205","nome_ocupacao":"Cabo
+        da Polícia Militar","created_at":"2024-07-16T00:50:19.144Z","updated_at":"2024-07-16T00:50:19.144Z"},{"id":19,"codigo_ocupacao":"021210","nome_ocupacao":"Soldado
+        da Polícia Militar","created_at":"2024-07-16T00:50:19.210Z","updated_at":"2024-07-16T00:50:19.210Z"},{"id":20,"codigo_ocupacao":"030105","nome_ocupacao":"Coronel
+        Bombeiro Militar","created_at":"2024-07-16T00:50:19.222Z","updated_at":"2024-07-16T00:50:19.222Z"},{"id":21,"codigo_ocupacao":"030110","nome_ocupacao":"Major
+        Bombeiro Militar","created_at":"2024-07-16T00:50:19.232Z","updated_at":"2024-07-16T00:50:19.232Z"},{"id":22,"codigo_ocupacao":"030115","nome_ocupacao":"Tenente-Coronel
+        Bombeiro Militar","created_at":"2024-07-16T00:50:19.243Z","updated_at":"2024-07-16T00:50:19.243Z"},{"id":23,"codigo_ocupacao":"030205","nome_ocupacao":"Capitão
+        Bombeiro Militar","created_at":"2024-07-16T00:50:19.253Z","updated_at":"2024-07-16T00:50:19.253Z"},{"id":24,"codigo_ocupacao":"030305","nome_ocupacao":"Tenente
+        do Corpo de Bombeiros Militar","created_at":"2024-07-16T00:50:19.263Z","updated_at":"2024-07-16T00:50:19.263Z"},{"id":25,"codigo_ocupacao":"031105","nome_ocupacao":"Subtenente
+        Bombeiro Militar","created_at":"2024-07-16T00:50:19.318Z","updated_at":"2024-07-16T00:50:19.318Z"},{"id":26,"codigo_ocupacao":"031110","nome_ocupacao":"Sargento
+        Bombeiro Militar","created_at":"2024-07-16T00:50:19.329Z","updated_at":"2024-07-16T00:50:19.329Z"},{"id":27,"codigo_ocupacao":"031205","nome_ocupacao":"Cabo
+        Bombeiro Militar","created_at":"2024-07-16T00:50:19.340Z","updated_at":"2024-07-16T00:50:19.340Z"},{"id":28,"codigo_ocupacao":"031210","nome_ocupacao":"Soldado
+        Bombeiro Militar","created_at":"2024-07-16T00:50:19.357Z","updated_at":"2024-07-16T00:50:19.357Z"},{"id":29,"codigo_ocupacao":"111105","nome_ocupacao":"Senador","created_at":"2024-07-16T00:50:19.416Z","updated_at":"2024-07-16T00:50:19.416Z"},{"id":30,"codigo_ocupacao":"111110","nome_ocupacao":"Deputado
+        Federal","created_at":"2024-07-16T00:50:19.427Z","updated_at":"2024-07-16T00:50:19.427Z"},{"id":31,"codigo_ocupacao":"111115","nome_ocupacao":"Deputado
+        Estadual e distrital","created_at":"2024-07-16T00:50:19.452Z","updated_at":"2024-07-16T00:50:19.452Z"},{"id":32,"codigo_ocupacao":"111120","nome_ocupacao":"Vereador","created_at":"2024-07-16T00:50:19.515Z","updated_at":"2024-07-16T00:50:19.515Z"},{"id":33,"codigo_ocupacao":"111205","nome_ocupacao":"Presidente
+        da República","created_at":"2024-07-16T00:50:19.527Z","updated_at":"2024-07-16T00:50:19.527Z"},{"id":34,"codigo_ocupacao":"111210","nome_ocupacao":"Vice-Presidente
+        da República","created_at":"2024-07-16T00:50:19.539Z","updated_at":"2024-07-16T00:50:19.539Z"},{"id":35,"codigo_ocupacao":"111215","nome_ocupacao":"Ministro
+        de estado","created_at":"2024-07-16T00:50:19.549Z","updated_at":"2024-07-16T00:50:19.549Z"},{"id":36,"codigo_ocupacao":"111220","nome_ocupacao":"Secretário
+        executivo","created_at":"2024-07-16T00:50:19.608Z","updated_at":"2024-07-16T00:50:19.608Z"},{"id":37,"codigo_ocupacao":"111225","nome_ocupacao":"Membro
+        superior do poder executivo","created_at":"2024-07-16T00:50:19.619Z","updated_at":"2024-07-16T00:50:19.619Z"},{"id":38,"codigo_ocupacao":"111230","nome_ocupacao":"Governador
+        de Estado","created_at":"2024-07-16T00:50:19.631Z","updated_at":"2024-07-16T00:50:19.631Z"},{"id":39,"codigo_ocupacao":"111235","nome_ocupacao":"Governador
+        do Distrito Federal","created_at":"2024-07-16T00:50:19.651Z","updated_at":"2024-07-16T00:50:19.651Z"},{"id":40,"codigo_ocupacao":"111240","nome_ocupacao":"Vice-Governador
+        de Estado","created_at":"2024-07-16T00:50:19.661Z","updated_at":"2024-07-16T00:50:19.661Z"},{"id":41,"codigo_ocupacao":"111245","nome_ocupacao":"Vice-Governador
+        do Distrito Federal","created_at":"2024-07-16T00:50:19.718Z","updated_at":"2024-07-16T00:50:19.718Z"},{"id":42,"codigo_ocupacao":"111250","nome_ocupacao":"Prefeito","created_at":"2024-07-16T00:50:19.729Z","updated_at":"2024-07-16T00:50:19.729Z"},{"id":43,"codigo_ocupacao":"111255","nome_ocupacao":"Vice-Prefeito","created_at":"2024-07-16T00:50:19.739Z","updated_at":"2024-07-16T00:50:19.739Z"},{"id":44,"codigo_ocupacao":"111305","nome_ocupacao":"Ministro
+        do Supremo Tribunal Federal","created_at":"2024-07-16T00:50:19.748Z","updated_at":"2024-07-16T00:50:19.748Z"},{"id":45,"codigo_ocupacao":"111310","nome_ocupacao":"Ministro
+        do Superior Tribunal de Justiça","created_at":"2024-07-16T00:50:19.758Z","updated_at":"2024-07-16T00:50:19.758Z"},{"id":46,"codigo_ocupacao":"111315","nome_ocupacao":"Ministro
+        do Superior Tribunal Militar","created_at":"2024-07-16T00:50:19.812Z","updated_at":"2024-07-16T00:50:19.812Z"},{"id":47,"codigo_ocupacao":"111320","nome_ocupacao":"Ministro
+        do Superior Tribunal do Trabalho","created_at":"2024-07-16T00:50:19.832Z","updated_at":"2024-07-16T00:50:19.832Z"},{"id":48,"codigo_ocupacao":"111325","nome_ocupacao":"Juiz
+        de Direito","created_at":"2024-07-16T00:50:19.843Z","updated_at":"2024-07-16T00:50:19.843Z"},{"id":49,"codigo_ocupacao":"111330","nome_ocupacao":"Juiz
+        Federal","created_at":"2024-07-16T00:50:19.855Z","updated_at":"2024-07-16T00:50:19.855Z"},{"id":50,"codigo_ocupacao":"111335","nome_ocupacao":"Juiz
+        Auditor Federal - Justiça Militar","created_at":"2024-07-16T00:50:19.911Z","updated_at":"2024-07-16T00:50:19.911Z"},{"id":51,"codigo_ocupacao":"111340","nome_ocupacao":"Juiz
+        Auditor Estadual - Justiça Militar","created_at":"2024-07-16T00:50:19.923Z","updated_at":"2024-07-16T00:50:19.923Z"},{"id":52,"codigo_ocupacao":"111345","nome_ocupacao":"Juiz
+        do Trabalho","created_at":"2024-07-16T00:50:19.936Z","updated_at":"2024-07-16T00:50:19.936Z"},{"id":53,"codigo_ocupacao":"111405","nome_ocupacao":"Dirigente
+        do serviço público federal","created_at":"2024-07-16T00:50:19.946Z","updated_at":"2024-07-16T00:50:19.946Z"},{"id":54,"codigo_ocupacao":"111410","nome_ocupacao":"Dirigente
+        do serviço público estadual e distrital","created_at":"2024-07-16T00:50:19.958Z","updated_at":"2024-07-16T00:50:19.958Z"},{"id":55,"codigo_ocupacao":"111415","nome_ocupacao":"Dirigente
+        do serviço público municipal","created_at":"2024-07-16T00:50:20.018Z","updated_at":"2024-07-16T00:50:20.018Z"},{"id":56,"codigo_ocupacao":"111505","nome_ocupacao":"Especialista
+        de políticas públicas e gestão governamental ¿ EPPGG","created_at":"2024-07-16T00:50:20.030Z","updated_at":"2024-07-16T00:50:20.030Z"},{"id":57,"codigo_ocupacao":"111510","nome_ocupacao":"Analista
+        de planejamento e orçamento - APO","created_at":"2024-07-16T00:50:20.045Z","updated_at":"2024-07-16T00:50:20.045Z"},{"id":58,"codigo_ocupacao":"113005","nome_ocupacao":"Cacique","created_at":"2024-07-16T00:50:20.118Z","updated_at":"2024-07-16T00:50:20.118Z"},{"id":59,"codigo_ocupacao":"113010","nome_ocupacao":"Líder
+        de comunidade caiçara","created_at":"2024-07-16T00:50:20.128Z","updated_at":"2024-07-16T00:50:20.128Z"},{"id":60,"codigo_ocupacao":"113015","nome_ocupacao":"Membro
+        de liderança quilombola","created_at":"2024-07-16T00:50:20.140Z","updated_at":"2024-07-16T00:50:20.140Z"},{"id":61,"codigo_ocupacao":"114105","nome_ocupacao":"Dirigente
+        de partido político","created_at":"2024-07-16T00:50:20.150Z","updated_at":"2024-07-16T00:50:20.150Z"},{"id":62,"codigo_ocupacao":"114205","nome_ocupacao":"Dirigentes
+        de entidades de trabalhadores","created_at":"2024-07-16T00:50:20.161Z","updated_at":"2024-07-16T00:50:20.161Z"},{"id":63,"codigo_ocupacao":"114210","nome_ocupacao":"Dirigentes
+        de entidades patronais","created_at":"2024-07-16T00:50:20.219Z","updated_at":"2024-07-16T00:50:20.219Z"},{"id":64,"codigo_ocupacao":"114305","nome_ocupacao":"Dirigente
+        e administrador de organização religiosa","created_at":"2024-07-16T00:50:20.230Z","updated_at":"2024-07-16T00:50:20.230Z"},{"id":65,"codigo_ocupacao":"114405","nome_ocupacao":"Dirigente
+        e administrador de organização da sociedade civil sem fins lucrativos","created_at":"2024-07-16T00:50:20.247Z","updated_at":"2024-07-16T00:50:20.247Z"},{"id":66,"codigo_ocupacao":"121005","nome_ocupacao":"Diretor
+        de planejamento estratégico","created_at":"2024-07-16T00:50:20.257Z","updated_at":"2024-07-16T00:50:20.257Z"},{"id":67,"codigo_ocupacao":"121010","nome_ocupacao":"Diretor
+        geral de empresa e organizações (exceto de interesse público)","created_at":"2024-07-16T00:50:20.312Z","updated_at":"2024-07-16T00:50:20.312Z"},{"id":68,"codigo_ocupacao":"122105","nome_ocupacao":"Diretor
+        de produção e operações em empresa agropecuária","created_at":"2024-07-16T00:50:20.323Z","updated_at":"2024-07-16T00:50:20.323Z"},{"id":69,"codigo_ocupacao":"122110","nome_ocupacao":"Diretor
+        de produção e operações em empresa aqüícola","created_at":"2024-07-16T00:50:20.335Z","updated_at":"2024-07-16T00:50:20.335Z"},{"id":70,"codigo_ocupacao":"122115","nome_ocupacao":"Diretor
+        de produção e operações em empresa florestal","created_at":"2024-07-16T00:50:20.345Z","updated_at":"2024-07-16T00:50:20.345Z"},{"id":71,"codigo_ocupacao":"122120","nome_ocupacao":"Diretor
+        de produção e operações em empresa pesqueira","created_at":"2024-07-16T00:50:20.356Z","updated_at":"2024-07-16T00:50:20.356Z"},{"id":72,"codigo_ocupacao":"122205","nome_ocupacao":"Diretor
+        de produção e operações da indústria de transformação, extração mineral e
+        utilidades","created_at":"2024-07-16T00:50:20.413Z","updated_at":"2024-07-16T00:50:20.413Z"},{"id":73,"codigo_ocupacao":"122305","nome_ocupacao":"Diretor
+        de operações de obras pública e civil","created_at":"2024-07-16T00:50:20.425Z","updated_at":"2024-07-16T00:50:20.425Z"},{"id":74,"codigo_ocupacao":"122405","nome_ocupacao":"Diretor
+        de operações comerciais (comércio atacadista e varejista)","created_at":"2024-07-16T00:50:20.436Z","updated_at":"2024-07-16T00:50:20.436Z"},{"id":75,"codigo_ocupacao":"122505","nome_ocupacao":"Diretor
+        de produção e operações de alimentação","created_at":"2024-07-16T00:50:20.453Z","updated_at":"2024-07-16T00:50:20.453Z"},{"id":76,"codigo_ocupacao":"122510","nome_ocupacao":"Diretor
+        de produção e operações de hotel","created_at":"2024-07-16T00:50:20.509Z","updated_at":"2024-07-16T00:50:20.509Z"},{"id":77,"codigo_ocupacao":"122515","nome_ocupacao":"Diretor
+        de produção e operações de turismo","created_at":"2024-07-16T00:50:20.524Z","updated_at":"2024-07-16T00:50:20.524Z"},{"id":78,"codigo_ocupacao":"122520","nome_ocupacao":"Turismólogo","created_at":"2024-07-16T00:50:20.534Z","updated_at":"2024-07-16T00:50:20.534Z"},{"id":79,"codigo_ocupacao":"122605","nome_ocupacao":"Diretor
+        de operações de correios","created_at":"2024-07-16T00:50:20.545Z","updated_at":"2024-07-16T00:50:20.545Z"},{"id":80,"codigo_ocupacao":"122610","nome_ocupacao":"Diretor
+        de operações de serviços de armazenamento","created_at":"2024-07-16T00:50:20.555Z","updated_at":"2024-07-16T00:50:20.555Z"},{"id":81,"codigo_ocupacao":"122615","nome_ocupacao":"Diretor
+        de operações de serviços de telecomunicações","created_at":"2024-07-16T00:50:20.564Z","updated_at":"2024-07-16T00:50:20.564Z"},{"id":82,"codigo_ocupacao":"122620","nome_ocupacao":"Diretor
+        de operações de serviços de transporte","created_at":"2024-07-16T00:50:20.620Z","updated_at":"2024-07-16T00:50:20.620Z"},{"id":83,"codigo_ocupacao":"122705","nome_ocupacao":"Diretor
+        comercial em operações de intermediação financeira","created_at":"2024-07-16T00:50:20.630Z","updated_at":"2024-07-16T00:50:20.630Z"},{"id":84,"codigo_ocupacao":"122710","nome_ocupacao":"Diretor
+        de produtos bancários","created_at":"2024-07-16T00:50:20.642Z","updated_at":"2024-07-16T00:50:20.642Z"},{"id":85,"codigo_ocupacao":"122715","nome_ocupacao":"Diretor
+        de crédito rural","created_at":"2024-07-16T00:50:20.652Z","updated_at":"2024-07-16T00:50:20.652Z"},{"id":86,"codigo_ocupacao":"122720","nome_ocupacao":"Diretor
+        de câmbio e comércio exterior","created_at":"2024-07-16T00:50:20.708Z","updated_at":"2024-07-16T00:50:20.708Z"},{"id":87,"codigo_ocupacao":"122725","nome_ocupacao":"Diretor
+        de compliance","created_at":"2024-07-16T00:50:20.721Z","updated_at":"2024-07-16T00:50:20.721Z"},{"id":88,"codigo_ocupacao":"122730","nome_ocupacao":"Diretor
+        de crédito (exceto crédito imobiliário)","created_at":"2024-07-16T00:50:20.733Z","updated_at":"2024-07-16T00:50:20.733Z"},{"id":89,"codigo_ocupacao":"122735","nome_ocupacao":"Diretor
+        de crédito imobiliário","created_at":"2024-07-16T00:50:20.745Z","updated_at":"2024-07-16T00:50:20.745Z"},{"id":90,"codigo_ocupacao":"122740","nome_ocupacao":"Diretor
+        de leasing","created_at":"2024-07-16T00:50:20.757Z","updated_at":"2024-07-16T00:50:20.757Z"},{"id":91,"codigo_ocupacao":"122745","nome_ocupacao":"Diretor
+        de mercado de capitais","created_at":"2024-07-16T00:50:20.816Z","updated_at":"2024-07-16T00:50:20.816Z"},{"id":92,"codigo_ocupacao":"122750","nome_ocupacao":"Diretor
+        de recuperação de créditos em operações de intermediação financeira","created_at":"2024-07-16T00:50:20.837Z","updated_at":"2024-07-16T00:50:20.837Z"},{"id":93,"codigo_ocupacao":"122755","nome_ocupacao":"Diretor
+        de riscos de mercado","created_at":"2024-07-16T00:50:20.850Z","updated_at":"2024-07-16T00:50:20.850Z"},{"id":94,"codigo_ocupacao":"123105","nome_ocupacao":"Diretor
+        administrativo","created_at":"2024-07-16T00:50:20.908Z","updated_at":"2024-07-16T00:50:20.908Z"},{"id":95,"codigo_ocupacao":"123110","nome_ocupacao":"Diretor
+        administrativo e financeiro","created_at":"2024-07-16T00:50:20.920Z","updated_at":"2024-07-16T00:50:20.920Z"},{"id":96,"codigo_ocupacao":"123115","nome_ocupacao":"Diretor
+        financeiro","created_at":"2024-07-16T00:50:20.932Z","updated_at":"2024-07-16T00:50:20.932Z"},{"id":97,"codigo_ocupacao":"123205","nome_ocupacao":"Diretor
+        de recursos humanos","created_at":"2024-07-16T00:50:20.950Z","updated_at":"2024-07-16T00:50:20.950Z"},{"id":98,"codigo_ocupacao":"123210","nome_ocupacao":"Diretor
+        de relações de trabalho","created_at":"2024-07-16T00:50:21.009Z","updated_at":"2024-07-16T00:50:21.009Z"},{"id":99,"codigo_ocupacao":"123305","nome_ocupacao":"Diretor
+        comercial","created_at":"2024-07-16T00:50:21.021Z","updated_at":"2024-07-16T00:50:21.021Z"},{"id":100,"codigo_ocupacao":"123310","nome_ocupacao":"Diretor
+        de marketing","created_at":"2024-07-16T00:50:21.032Z","updated_at":"2024-07-16T00:50:21.032Z"}]},"paginate":{"total_count":2718,"total_pages":28,"current_page":1,"next_page":2,"prev_page":null,"first_page":true,"last_page":false,"out_of_range":false,"current_per_page":100,"default_per_page":25}}'
+  recorded_at: Fri, 19 Jul 2024 20:09:11 GMT
+recorded_with: VCR 6.2.0

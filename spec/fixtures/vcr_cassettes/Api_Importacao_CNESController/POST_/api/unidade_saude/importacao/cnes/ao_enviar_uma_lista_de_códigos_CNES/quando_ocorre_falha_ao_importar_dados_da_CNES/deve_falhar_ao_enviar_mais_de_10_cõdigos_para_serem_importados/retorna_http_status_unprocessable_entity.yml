@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://saudesimples-importacao-cnes-api.qa.om30.cloud/api/v1/unidades_saude?cnes=1234567
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Faraday v2.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 422
+      message: Unprocessable Content
+    headers:
+      Date:
+      - Wed, 03 Jul 2024 20:14:55 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '101'
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Accept
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - x-request-id
+      X-Runtime:
+      - '4.924213'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.05, sql.active_record;dur=2.83, process_action.action_controller;dur=4861.91
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers:
+      - access-control-expose-headers
+      Etag:
+      - etag
+    body:
+      encoding: UTF-8
+      string: '{"success":false,"error":"(S:Receiver) Nenhum resultado foi encontrado
+        para a consulta solicitada. "}'
+  recorded_at: Wed, 03 Jul 2024 20:14:53 GMT
+recorded_with: VCR 6.2.0

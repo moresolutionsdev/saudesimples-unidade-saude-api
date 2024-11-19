@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://saudesimples-importacao-cnes-api.qa.om30.cloud/api/v1/unidades_saude?cnes=2038013
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Faraday v2.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 04 Jul 2024 03:21:06 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '8055'
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Accept
+      Etag:
+      - etag
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - x-request-id
+      X-Runtime:
+      - '0.148080'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.02, sql.active_record;dur=18.84,
+        instantiation.active_record;dur=65.31, process_action.action_controller;dur=138.31
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers:
+      - access-control-expose-headers
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"data":{"unidades_de_saude":[{"id":22,"nome_fantasia":"CAPS
+        A D ALCOOL E DROGAS HORTOLANDIA","cnpj":"67995027000132","cnes":"2038013","tipo_unidade_saude":"70","descricao_tipo_unidade_saude":"CENTRO
+        DE ATENCAO PSICOSSOCIAL","codigo_subtipo_unidade_saude":"005","descricao_subtipo_unidade_saude":"CAPS
+        ALCOOL E DROGA","telefone1":"","telefone2":"","fax":"","email":"","created_at":"2024-06-10T22:58:57.937Z","enderecos":[{"id":23,"ownerable_type":"UnidadeSaude","ownerable_id":22,"cep":"13184-060","uf":"SP","logradouro":"RUA
+        JOAO FRUCTUOSO MIRANDA FILHO","numero":"460","bairro":"{\"descricao_bairro\"=\u003e\"PQ
+        ORTOLANDIA\"}","codigo_ibge":"351907","complemento":"","ponto_referencia":"","created_at":"2024-06-10T22:58:58.029Z"},{"id":59,"ownerable_type":"UnidadeSaude","ownerable_id":22,"cep":"13184060","uf":"SP","logradouro":"RUA
+        JOAO FRUCTUOSO MIRANDA FILHO","numero":"460","bairro":"PQ ORTOLANDIA","codigo_ibge":"3519071","complemento":"","ponto_referencia":"","created_at":"2024-06-28T01:24:32.998Z"}],"equipes":[],"complexidades":[{"id":33,"unidade_saude_id":22,"sigla":"MC","created_at":"2024-06-10T22:58:58.122Z"},{"id":34,"unidade_saude_id":22,"sigla":"AB","created_at":"2024-06-10T22:58:58.144Z"}],"lotacoes":[{"id":728,"unidade_saude_id":22,"profissional_id":603,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"251510","microarea":"","created_at":"2024-06-10T23:01:44.330Z"},{"id":729,"unidade_saude_id":22,"profissional_id":604,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"251510","microarea":"","created_at":"2024-06-10T23:01:44.333Z"},{"id":778,"unidade_saude_id":22,"profissional_id":645,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"322205","microarea":"","created_at":"2024-06-10T23:01:52.630Z"},{"id":779,"unidade_saude_id":22,"profissional_id":646,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"322205","microarea":"","created_at":"2024-06-10T23:01:52.634Z"},{"id":1410,"unidade_saude_id":22,"profissional_id":1123,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"223505","microarea":"","created_at":"2024-06-10T23:03:44.927Z"},{"id":1411,"unidade_saude_id":22,"profissional_id":1124,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"223505","microarea":"","created_at":"2024-06-10T23:03:44.941Z"},{"id":1486,"unidade_saude_id":22,"profissional_id":1195,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"223505","microarea":"","created_at":"2024-06-10T23:03:58.934Z"},{"id":1487,"unidade_saude_id":22,"profissional_id":1196,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"223505","microarea":"","created_at":"2024-06-10T23:03:59.021Z"},{"id":1828,"unidade_saude_id":22,"profissional_id":1467,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"251605","microarea":"","created_at":"2024-06-10T23:05:00.620Z"},{"id":1829,"unidade_saude_id":22,"profissional_id":1468,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"251605","microarea":"","created_at":"2024-06-10T23:05:00.629Z"},{"id":1936,"unidade_saude_id":22,"profissional_id":1555,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"322205","microarea":"","created_at":"2024-06-10T23:05:20.321Z"},{"id":2008,"unidade_saude_id":22,"profissional_id":1615,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"411010","microarea":"","created_at":"2024-06-10T23:05:34.340Z"},{"id":1937,"unidade_saude_id":22,"profissional_id":1556,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"322205","microarea":"","created_at":"2024-06-10T23:05:20.332Z"},{"id":2009,"unidade_saude_id":22,"profissional_id":1616,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"411010","microarea":"","created_at":"2024-06-10T23:05:34.418Z"},{"id":2563,"unidade_saude_id":22,"profissional_id":2058,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"223905","microarea":"","created_at":"2024-06-10T23:08:31.444Z"},{"id":2562,"unidade_saude_id":22,"profissional_id":2057,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"223905","microarea":"","created_at":"2024-06-10T23:08:31.422Z"},{"id":2662,"unidade_saude_id":22,"profissional_id":2110,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"322205","microarea":"","created_at":"2024-06-10T23:09:00.640Z"},{"id":2663,"unidade_saude_id":22,"profissional_id":2111,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"322205","microarea":"","created_at":"2024-06-10T23:09:00.723Z"},{"id":2757,"unidade_saude_id":22,"profissional_id":2176,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"223505","microarea":"","created_at":"2024-06-10T23:09:27.421Z"},{"id":2756,"unidade_saude_id":22,"profissional_id":2175,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"223505","microarea":"","created_at":"2024-06-10T23:09:27.336Z"},{"id":2758,"unidade_saude_id":22,"profissional_id":2177,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"223505","microarea":"","created_at":"2024-06-10T23:09:27.426Z"},{"id":3082,"unidade_saude_id":22,"profissional_id":2450,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"131210","microarea":"","created_at":"2024-06-10T23:10:29.232Z"},{"id":3081,"unidade_saude_id":22,"profissional_id":2449,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"131210","microarea":"","created_at":"2024-06-10T23:10:29.132Z"},{"id":3080,"unidade_saude_id":22,"profissional_id":2448,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"131210","microarea":"","created_at":"2024-06-10T23:10:29.129Z"},{"id":3672,"unidade_saude_id":22,"profissional_id":2932,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"225133","microarea":"","created_at":"2024-06-10T23:12:26.937Z"},{"id":3671,"unidade_saude_id":22,"profissional_id":2931,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"225133","microarea":"","created_at":"2024-06-10T23:12:26.933Z"},{"id":3673,"unidade_saude_id":22,"profissional_id":2933,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"225133","microarea":"","created_at":"2024-06-10T23:12:26.942Z"},{"id":4890,"unidade_saude_id":22,"profissional_id":3891,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"411010","microarea":"","created_at":"2024-06-10T23:16:34.034Z"},{"id":4931,"unidade_saude_id":22,"profissional_id":3929,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"223405","microarea":"","created_at":"2024-06-10T23:16:41.740Z"},{"id":4891,"unidade_saude_id":22,"profissional_id":3892,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"411010","microarea":"","created_at":"2024-06-10T23:16:34.037Z"},{"id":4933,"unidade_saude_id":22,"profissional_id":3931,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"223405","microarea":"","created_at":"2024-06-10T23:16:41.828Z"},{"id":4889,"unidade_saude_id":22,"profissional_id":3890,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"411010","microarea":"","created_at":"2024-06-10T23:16:34.028Z"},{"id":4932,"unidade_saude_id":22,"profissional_id":3930,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"223405","microarea":"","created_at":"2024-06-10T23:16:41.743Z"},{"id":5234,"unidade_saude_id":22,"profissional_id":4188,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"411010","microarea":"","created_at":"2024-06-10T23:17:43.925Z"},{"id":5236,"unidade_saude_id":22,"profissional_id":4190,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"411010","microarea":"","created_at":"2024-06-10T23:17:43.940Z"},{"id":5235,"unidade_saude_id":22,"profissional_id":4189,"equipe_id":null,"cnes":"2038013","codigo_ine":"","codigo_cbo":"411010","microarea":"","created_at":"2024-06-10T23:17:43.933Z"}]}]},"paginate":{"total_count":1,"total_pages":1,"current_page":1,"next_page":null,"prev_page":null,"first_page":true,"last_page":true,"out_of_range":false,"current_per_page":25,"default_per_page":25}}'
+  recorded_at: Thu, 04 Jul 2024 03:21:06 GMT
+recorded_with: VCR 6.2.0

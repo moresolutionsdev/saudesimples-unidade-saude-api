@@ -1,0 +1,26 @@
+name: CD Development
+
+on:
+  push:
+    branches:
+      - development
+    tags:
+      - dev*
+  workflow_dispatch:
+
+jobs:
+  pipeline:
+    uses: OM30/pipelines/.github/workflows/cd.yaml@v1.0.6
+    with:
+      os_version: "ubuntu-latest"
+      service: "ss-unidade-saude-api"
+      project: "prj-om30-bossabox-development"
+      environment: "development"
+      overlay: "apps/overlays/dev/"
+      ruby_version: "3.3.1"
+    secrets:
+      GCLOUD_PROJECT_ID: ${{ secrets.GCLOUD_PROJECT_ID_DEV }}
+      GCLOUD_SERVICE_KEY: ${{ secrets.GCLOUD_SERVICE_KEY_MASTER }}
+      SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      BUNDLE_RUBYGEMS__PKG__GITHUB__COM: ${{ secrets.BUNDLE_RUBYGEMS__PKG__GITHUB__COM }}
+      TOKEN: ${{ secrets.TOKEN_GITHUB }}

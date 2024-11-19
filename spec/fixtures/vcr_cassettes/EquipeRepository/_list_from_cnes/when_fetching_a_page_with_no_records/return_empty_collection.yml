@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://saudesimples-importacao-cnes-api.qa.om30.cloud/api/v1/equipes?page=10
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Faraday v2.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 28 Jul 2024 14:00:00 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '237'
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Accept, Origin
+      Etag:
+      - etag
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - x-request-id
+      X-Runtime:
+      - '0.017846'
+      Server-Timing:
+      - start_processing.action_controller;dur=0.02, sql.active_record;dur=3.88, instantiation.active_record;dur=0.70,
+        process_action.action_controller;dur=10.01
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Access-Control-Expose-Headers:
+      - access-control-expose-headers
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"data":{"equipes":[]},"paginate":{"total_count":92,"total_pages":4,"current_page":10,"next_page":null,"prev_page":null,"first_page":false,"last_page":false,"out_of_range":true,"current_per_page":25,"default_per_page":25}}'
+  recorded_at: Sun, 28 Jul 2024 14:00:00 GMT
+recorded_with: VCR 6.2.0

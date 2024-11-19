@@ -1,0 +1,1955 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/areas":
+    get:
+      summary: list areas
+      tags:
+      - Areas
+      description: Listar as areas
+      parameters:
+      - name: nome
+        in: query
+        description: Nome da area
+        schema:
+          type: string
+      - name: codigo
+        in: query
+        description: Código da area
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Número da página
+        schema:
+          type: string
+      - name: per_page
+        in: query
+        description: Número de registros por página
+        schema:
+          type: string
+      - name: order
+        in: query
+        description: Ordenação dos registros
+        schema:
+          type: string
+      - name: order_direction
+        in: query
+        description: Direção da ordenação
+        schema:
+          type: string
+      - name: municipio_id
+        in: query
+        description: Municipio ID
+        schema:
+          type: string
+      - name: segmento_id
+        in: query
+        description: Segmento ID
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/audits":
+    get:
+      summary: list audits
+      tags:
+      - Audits
+      description: Listar os audits pelo auditable
+      parameters:
+      - name: page
+        in: query
+        description: Número da página
+        schema:
+          type: string
+      - name: per_page
+        in: query
+        description: Número de registros por página
+        schema:
+          type: string
+      - name: order
+        in: query
+        description: Ordenação dos registros
+        schema:
+          type: string
+      - name: order_direction
+        in: query
+        description: Direção da ordenação
+        schema:
+          type: string
+      - name: date_start
+        in: query
+        description: Data de início
+        schema:
+          type: string
+      - name: date_end
+        in: query
+        description: Data de fim
+        schema:
+          type: string
+      - name: term
+        in: query
+        description: Termo de busca
+        schema:
+          type: string
+      - name: auditable
+        in: query
+        description: Auditable
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/equipamento":
+    get:
+      summary: list equipamentos
+      tags:
+      - Equipamentos
+      description: Listar os equipamentos
+      parameters:
+      - name: nome
+        in: query
+        description: Nome do equipamento
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/equipes/{equipe_id}/equipe_profissionais":
+    parameters:
+    - name: equipe_id
+      in: path
+      description: equipe_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: list equipes_profissionais
+      tags:
+      - Equipes Profissionais
+      description: Listar os profissionais de uma equipe
+      parameters:
+      - name: term
+        in: query
+        description: Termo de busca
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Número da página
+        schema:
+          type: integer
+      - name: per_page
+        in: query
+        description: Número de registros por página
+        schema:
+          type: integer
+      - name: order
+        in: query
+        description: Ordenação dos registros
+        schema:
+          type: string
+      - name: order_direction
+        in: query
+        description: Direção da ordenação
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/equipes/{id}/alternar_situacao":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    put:
+      summary: alternar_situacao equipe
+      tags:
+      - Equipes
+      description: Alternar a situação de uma equipe
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/equipes":
+    post:
+      summary: create equipe
+      tags:
+      - Equipes
+      description: Criar uma equipe para uma unidade de saude
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                codigo:
+                  type: string
+                nome:
+                  type: string
+                area:
+                  type: string
+                unidade_saude_id:
+                  type: string
+                tipo_equipe_id:
+                  type: string
+                data_ativacao:
+                  type: string
+                data_desativacao:
+                  type: string
+                motivo_desativacao:
+                  type: string
+                populacao_assistida:
+                  type: string
+                mapeamento_indigena_id:
+                  type: string
+                equipes_profissionais_attributes:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      equipe_id:
+                        type: string
+                      profissional_id:
+                        type: string
+                      ocupacao_id:
+                        type: string
+                      codigo_micro_area:
+                        type: string
+                      entrada:
+                        type: string
+                      data_saida:
+                        type: string
+                      _destroy:
+                        type: string
+  "/api/unidade_saude/equipes/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show equipe
+      tags:
+      - Equipes
+      description: Exibir uma equipe
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update equipe
+      tags:
+      - Equipes
+      description: Atualizar uma equipe
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                codigo:
+                  type: string
+                nome:
+                  type: string
+                area:
+                  type: string
+                unidade_saude_id:
+                  type: string
+                tipo_equipe_id:
+                  type: string
+                data_ativacao:
+                  type: string
+                data_desativacao:
+                  type: string
+                motivo_desativacao:
+                  type: string
+                populacao_assistida:
+                  type: string
+                mapeamento_indigena_id:
+                  type: string
+                equipes_profissionais_attributes:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      equipe_id:
+                        type: string
+                      profissional_id:
+                        type: string
+                      ocupacao_id:
+                        type: string
+                      codigo_micro_area:
+                        type: string
+                      entrada:
+                        type: string
+                      data_saida:
+                        type: string
+                      _destroy:
+                        type: string
+    delete:
+      summary: delete equipe
+      tags:
+      - Equipes
+      description: Excluir uma equipe
+      responses:
+        '200':
+          description: successful
+  "/api/estados":
+    get:
+      summary: list estados
+      tags:
+      - Estados
+      description: Listar os estados
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/importacao/cnes":
+    post:
+      summary: create cne
+      tags:
+      - Importação CNES
+      description: Importa unidades de saúdes a partir de um array de cnes, utilizando
+        o serviço de importação de CNES
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+  "/api/unidade_saude/importacao_zip/cnes":
+    post:
+      summary: create cne
+      tags:
+      - Importação CNES
+      description: Importar um arquivo zip com os dados do CNES
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: file
+        required: true
+  "/api/unidade_saude/importacao_zip/sync_unidades_saude":
+    post:
+      summary: sync_unidades_saude webhook
+      tags:
+      - Importação CNES
+      description: Webhook para sincronizar as unidades de saude. Perfoma um job para
+        sincronizar as unidades de saude (SyncUnidadesDeSaudeWithCNESJob)
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/instalacao_fisica":
+    get:
+      summary: search instalacao_fisica
+      tags:
+      - Instalacao Fisica
+      description: Listar as instalacoes fisicas de uma unidade de saude
+      parameters:
+      - name: id
+        in: query
+        description: Id da instalacao fisica
+        schema:
+          type: string
+      - name: nome
+        in: query
+        description: Nome da instalacao fisica
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/mapeamento_indigenas":
+    get:
+      summary: list mapeamento_indigenas
+      tags:
+      - Mapeamento Indigenas
+      description: Listar os mapeamentos de indigenas
+      parameters:
+      - name: search_term
+        in: query
+        description: Termo de busca
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Número da página
+        schema:
+          type: string
+      - name: per_page
+        in: query
+        description: Número de registros por página
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/micro_areas":
+    get:
+      summary: list micro_areas
+      tags:
+      - Micro Areas
+      description: Listar as micro areas
+      parameters:
+      - name: page
+        in: query
+        description: Número da página
+        schema:
+          type: integer
+      - name: per_page
+        in: query
+        description: Número de registros por página
+        schema:
+          type: integer
+      - name: nome
+        in: query
+        description: Nome da micro area
+        schema:
+          type: string
+      - name: area_id
+        in: query
+        description: ID da area
+        schema:
+          type: integer
+      - name: order
+        in: query
+        description: Ordenação dos registros
+        schema:
+          type: string
+      - name: order_direction
+        in: query
+        description: Direção da ordenação
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/estados/{estado_id}/municipios":
+    parameters:
+    - name: estado_id
+      in: path
+      description: estado_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: list municipios
+      tags:
+      - Endereço
+      description: Listar os municipios de um estado
+      parameters:
+      - name: page
+        in: query
+        description: Número da página
+        schema:
+          type: integer
+      - name: per_page
+        in: query
+        description: Número de registros por página
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: successful
+  "/api/nacionalidades":
+    get:
+      summary: list nacionalidades
+      tags:
+      - Nacionalidades
+      description: Listar as nacionalidades
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/ocupacoes":
+    get:
+      summary: list ocupacos
+      tags:
+      - Ocupacoes
+      description: Listar as ocupacoes de uma unidade de saude
+      parameters:
+      - name: page
+        in: query
+        description: Número da página
+        schema:
+          type: string
+      - name: per_page
+        in: query
+        description: Número de registros por página
+        schema:
+          type: string
+      - name: order
+        in: query
+        description: Ordenação dos registros
+        schema:
+          type: string
+      - name: order_direction
+        in: query
+        description: Direção da ordenação
+        schema:
+          type: string
+      - name: nome
+        in: query
+        description: Nome da ocupacao
+        schema:
+          type: string
+      - name: codigo
+        in: query
+        description: Código da ocupacao
+        schema:
+          type: string
+      - name: saude
+        in: query
+        description: Saude da ocupacao
+        schema:
+          type: string
+      - name: search_term
+        in: query
+        description: Termo de busca
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/paises":
+    get:
+      summary: list paises
+      tags:
+      - Endereço
+      description: Listar os paises
+      parameters:
+      - name: page
+        in: query
+        description: Número da página
+        schema:
+          type: integer
+      - name: per_page
+        in: query
+        description: Número de registros por página
+        schema:
+          type: integer
+      - name: search_term
+        in: query
+        description: Termo de busca
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/permissoes":
+    get:
+      summary: list permissos
+      tags:
+      - Permissoes
+      description: Listar as permissões de uma unidade de saude
+      parameters:
+      - name: nome
+        in: query
+        description: Nome da permissão
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/profissionais":
+    get:
+      summary: list profissionais
+      tags:
+      - Profissionais
+      description: Listar os profissionais de uma unidade de saude
+      parameters:
+      - name: nome
+        in: query
+        description: Nome do profissional
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Número da página
+        schema:
+          type: string
+      - name: per_page
+        in: query
+        description: Número de registros por página
+        schema:
+          type: string
+      - name: order
+        in: query
+        description: Ordenação dos registros
+        schema:
+          type: string
+      - name: order_direction
+        in: query
+        description: Direção da ordenação
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/{unidade_saude_id}/servico_especializado":
+    parameters:
+    - name: unidade_saude_id
+      in: path
+      description: unidade_saude_id
+      required: true
+      schema:
+        type: string
+    post:
+      summary: create servico_especializado
+      tags:
+      - Servicos
+      description: Criar um servico especializado para uma unidade de saude
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                codigo_classificacao:
+                  type: string
+                caracteristica_servico_id:
+                  type: string
+                codigo_cnes_terceiro:
+                  type: string
+                atende_ambulatorial_nao_sus:
+                  type: boolean
+                atende_ambulatorial_sus:
+                  type: boolean
+                atende_hospitalar_nao_sus:
+                  type: boolean
+                atende_hospitalar_sus:
+                  type: boolean
+                endereco_complementar_unidade_id:
+                  type: string
+                servico_id:
+                  type: string
+              required:
+              - codigo_classificacao
+              - caracteristica_servico_id
+              - codigo_cnes_terceiro
+              - atende_ambulatorial_nao_sus
+              - atende_ambulatorial_sus
+              - atende_hospitalar_nao_sus
+              - atende_hospitalar_sus
+              - endereco_complementar_unidade_id
+              - servico_id
+  "/api/unidade_saude/{unidade_saude_id}/servico_especializado/{id}":
+    parameters:
+    - name: unidade_saude_id
+      in: path
+      description: unidade_saude_id
+      required: true
+      schema:
+        type: string
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    delete:
+      summary: delete servico_especializado
+      tags:
+      - Servicos
+      description: Excluir um servico especializado de uma unidade de saude
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/servicos_apoio/caracteristica":
+    get:
+      summary: list caracteristicas_servicos
+      tags:
+      - Servicos Apoio
+      description: Listar as caracteristicas dos servicos de apoio de uma unidade
+        de saude
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/{unidade_saude_id}/servicos_apoio":
+    parameters:
+    - name: unidade_saude_id
+      in: path
+      description: unidade_saude_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: list servicos_apoios
+      tags:
+      - Servicos Apoio
+      description: Listar os servicos de apoio de uma unidade de saude
+      parameters:
+      - name: page
+        in: query
+        description: Número da página
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create servicos_apoio
+      tags:
+      - Servicos Apoio
+      description: Criar um servico de apoio para uma unidade de saude
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tipo_servico_apoio_id:
+                  type: string
+                caracteristica_servico_id:
+                  type: string
+              required:
+              - tipo_servico_apoio_id
+              - caracteristica_servico_id
+  "/api/unidade_saude/{unidade_saude_id}/servicos_apoio/{id}":
+    parameters:
+    - name: unidade_saude_id
+      in: path
+      description: unidade_saude_id
+      required: true
+      schema:
+        type: string
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    delete:
+      summary: delete servicos_apoio
+      tags:
+      - Servicos Apoio
+      description: Excluir um servico de apoio de uma unidade de saude
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/servicos_apoio/tipos":
+    get:
+      summary: list tipos
+      tags:
+      - Servicos Apoio
+      description: Listar os tipos dos servicos de apoio de uma unidade de saude
+      parameters:
+      - name: nome
+        in: query
+        description: Nome do tipo
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/servicos/classificacao":
+    get:
+      summary: list servicos_classificacaos
+      tags:
+      - Servicos
+      description: Listar os servicos de classificacao de uma unidade de saude
+      parameters:
+      - name: codigo_servico
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/tipo_equipes":
+    get:
+      summary: list tipo_equipes
+      tags:
+      - Equipes
+      parameters:
+      - name: sigla
+        in: query
+        description: Sigla da equipe
+        schema:
+          type: string
+      - name: descricao
+        in: query
+        description: Descrição da equipe
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Número da página
+        schema:
+          type: integer
+      - name: per_page
+        in: query
+        description: Número de registros por página
+        schema:
+          type: integer
+      description: Listagem de tipo de equipes
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/servicos":
+    get:
+      summary: list tipos_de_servicos
+      tags:
+      - Tipos de Serviço
+      description: Listar os tipos de serviço disponíveis
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/{id}/auditorias":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: list auditoria
+      tags:
+      - Auditorias
+      description: Listar as auditorias de uma unidade de saude
+      parameters:
+      - name: page
+        in: query
+        description: Número da página
+        schema:
+          type: string
+      - name: per_page
+        in: query
+        description: Número de registros por página
+        schema:
+          type: string
+      - name: order
+        in: query
+        description: Ordenação dos registros
+        schema:
+          type: string
+      - name: order_direction
+        in: query
+        description: Direção da ordenação
+        schema:
+          type: string
+      - name: date_start
+        in: query
+        description: Data de início
+        schema:
+          type: string
+      - name: date_end
+        in: query
+        description: Data de fim
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/profissionais/{profissional_id}/equipes":
+    parameters:
+    - name: profissional_id
+      in: path
+      description: profissional_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: by_profissional equipe_profissionai
+      tags:
+      - Equipe Profissionais
+      description: Listar as equipes de um profissional
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/{unidade_saude_id}/equipes/{equipe_id}/equipe_profissionais":
+    parameters:
+    - name: unidade_saude_id
+      in: path
+      description: unidade_saude_id
+      required: true
+      schema:
+        type: string
+    - name: equipe_id
+      in: path
+      description: equipe_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: list equipe_profissionais
+      tags:
+      - Equipe Profissionais
+      description: Listar os profissionais de uma equipe
+      parameters:
+      - name: page
+        in: query
+        description: Número da página
+        schema:
+          type: string
+      - name: per_page
+        in: query
+        description: Número de registros por página
+        schema:
+          type: string
+      - name: order
+        in: query
+        description: Ordenação dos registros
+        schema:
+          type: string
+      - name: order_direction
+        in: query
+        description: Direção da ordenação
+        schema:
+          type: string
+      - name: term
+        in: query
+        description: Termo de busca
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/equipes/minimal":
+    get:
+      summary: minimal equipe
+      tags:
+      - Equipes
+      description: Listagem de equipes
+      parameters:
+      - name: page
+        in: query
+        description: Número da página
+        schema:
+          type: integer
+      - name: per_page
+        in: query
+        description: Número de registros por página
+        schema:
+          type: integer
+      - name: term
+        in: query
+        description: Termo de busca
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/equipes/{id}/micro_areas":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: micro_areas equipe
+      tags:
+      - - Equipes
+        - Micro Áreas
+      description: Listar as micro áreas de uma equipe
+      parameters:
+      - name: term
+        in: query
+        description: Termo de busca
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/{unidade_saude_id}/equipes":
+    parameters:
+    - name: unidade_saude_id
+      in: path
+      description: unidade_saude_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: list equipes
+      tags:
+      - Equipes
+      description: Listar as equipes de uma unidade de saude
+      parameters:
+      - name: page
+        in: query
+        description: Número da página
+        schema:
+          type: string
+      - name: per_page
+        in: query
+        description: Número de registros por página
+        schema:
+          type: string
+      - name: order
+        in: query
+        description: Ordenação dos registros
+        schema:
+          type: string
+      - name: order_direction
+        in: query
+        description: Direção da ordenação
+        schema:
+          type: string
+      - name: term
+        in: query
+        description: Termo de busca
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/{unidade_saude_id}/equipes/{id}":
+    parameters:
+    - name: unidade_saude_id
+      in: path
+      description: unidade_saude_id
+      required: true
+      schema:
+        type: string
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show equipe
+      tags:
+      - Equipes
+      description: Exibir uma equipe de uma unidade de saude
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/{id}/instalacao_fisica":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    post:
+      summary: create instalacao_unidade
+      tags:
+      - Instalacao Unidades
+      description: Criar uma instalacao unidade para uma unidade de saude
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                instalacao_fisica_id:
+                  type: string
+                qtde_instalacoes:
+                  type: integer
+                qtde_leitos:
+                  type: integer
+  "/api/unidade_saude/{unidade_saude_id}/instalacao_fisica":
+    parameters:
+    - name: unidade_saude_id
+      in: path
+      description: unidade_saude_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: list instalacao_unidades
+      tags:
+      - Instalacao Unidades
+      description: Listar as instalacoes fisicas de uma unidade de saude
+      parameters:
+      - name: page
+        in: query
+        description: Número da página
+        schema:
+          type: integer
+      - name: per_page
+        in: query
+        description: Número de registros por página
+        schema:
+          type: integer
+      - name: order
+        in: query
+        description: Ordenação dos registros
+        schema:
+          type: string
+      - name: order_direction
+        in: query
+        description: Direção da ordenação
+        schema:
+          type: string
+      - name: nome
+        in: query
+        description: Nome da instalacao
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/{unidade_saude_id}/instalacao/{id}":
+    parameters:
+    - name: unidade_saude_id
+      in: path
+      description: unidade_saude_id
+      required: true
+      schema:
+        type: string
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    delete:
+      summary: delete instalacao_unidade
+      tags:
+      - Instalacao Unidades
+      description: Deletar uma instalacao unidade de uma unidade de saude
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/{unidade_saude_id}/parametros":
+    parameters:
+    - name: unidade_saude_id
+      in: path
+      description: unidade_saude_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: list parametros
+      tags:
+      - Parametros
+      description: Listar os parametros de uma unidade de saude
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/politicas_acesso/ultima_versao":
+    get:
+      summary: ultima_versao politicas_acesso
+      tags:
+      - Politicas de Acesso
+      description: Listar a ultima versão das politicas de acesso
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/politicas_acesso":
+    get:
+      summary: list politicas_acessos
+      tags:
+      - Politicas de Acesso
+      description: Listar as politicas de acesso
+      parameters:
+      - name: nome_arquivo
+        in: query
+        description: Nome do arquivo
+        schema:
+          type: string
+      - name: data_criacao
+        in: query
+        description: Data de criação
+        schema:
+          type: string
+      - name: email_usuario
+        in: query
+        description: Email do usuário
+        schema:
+          type: string
+      - name: order
+        in: query
+        description: Ordenação dos registros
+        schema:
+          type: string
+      - name: order_direction
+        in: query
+        description: Direção da ordenação
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Número da página
+        schema:
+          type: string
+      - name: per_page
+        in: query
+        description: Número de registros por página
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create politicas_acesso
+      tags:
+      - Politicas de Acesso
+      description: Criar uma politica de acesso
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: file
+        description: Arquivo do documento
+  "/api/unidade_saude/politicas_acesso/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show politicas_acesso
+      tags:
+      - Politicas de Acesso
+      description: Exibir uma politica de acesso
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/{unidade_saude_id}/profissional":
+    parameters:
+    - name: unidade_saude_id
+      in: path
+      description: unidade_saude_id
+      required: true
+      schema:
+        type: string
+    post:
+      summary: create profissional
+      tags:
+      - Profissionais
+      description: Vincular um profissional a uma unidade de saude
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                profissional_id:
+                  type: string
+                ocupacao_id:
+                  type: string
+  "/api/unidade_saude/termos_uso/ultima_versao":
+    get:
+      summary: ultima_versao termos_uso
+      tags:
+      - Termos de Uso
+      description: Listar a ultima versão dos termos de uso
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/termos_uso":
+    post:
+      summary: create termos_uso
+      tags:
+      - Termos de Uso
+      description: Criar um termo de uso
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: file
+        description: Arquivo do termo de uso
+  "/api/unidade_saude/termos_usos":
+    get:
+      summary: list termos_usos
+      tags:
+      - Termos de Uso
+      description: Listar os termos de uso
+      parameters:
+      - name: nome_arquivo
+        in: query
+        description: Nome do arquivo
+        schema:
+          type: string
+      - name: data_criacao
+        in: query
+        description: Data de criação
+        schema:
+          type: string
+      - name: email_usuario
+        in: query
+        description: Email do usuário
+        schema:
+          type: string
+      - name: order
+        in: query
+        description: Ordenação dos registros
+        schema:
+          type: string
+      - name: order_direction
+        in: query
+        description: Direção da ordenação
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Número da página
+        schema:
+          type: string
+      - name: per_page
+        in: query
+        description: Número de registros por página
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/termos_usos/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show termos_uso
+      tags:
+      - Termos de Uso
+      description: Exibir um termo de uso
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/tipo_unidade_saude":
+    get:
+      summary: list tipo_unidade_saudes
+      tags:
+      - Tipo Unidade Saude
+      description: Listar os tipos de unidade de saude
+      parameters:
+      - name: nome
+        in: query
+        description: Nome do tipo de unidade de saude
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/listagem/minimal":
+    get:
+      summary: listagem_reduzida unidade_saude_minimal
+      tags:
+      - Unidade Saude
+      parameters:
+      - name: situacao
+        in: query
+        description: Situação da unidade de saúde
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: Status da unidade de saúde
+        schema:
+          type: string
+      - name: term
+        in: query
+        description: Termo de busca
+        schema:
+          type: string
+      - name: cnes
+        in: query
+        description: CNES da unidade de saúde
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Página
+        schema:
+          type: integer
+      - name: per_page
+        in: query
+        description: Itens por página
+        schema:
+          type: integer
+      - name: order
+        in: query
+        description: Ordenação
+        schema:
+          type: string
+      - name: order_direction
+        in: query
+        description: Direção da ordenação
+        schema:
+          type: string
+      - name: exportacao_esus
+        in: query
+        description: Exportação para o e-SUS
+        schema:
+          type: string
+      description: Listagem reduzida de unidades de saúde
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/tipo_administracao":
+    get:
+      summary: tipo_administracao unidade_saude
+      tags:
+      - Unidade Saude
+      description: Retorna os tipos de administração de uma unidade de saúde
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/subtipo_unidade_saude":
+    get:
+      summary: subtipo_unidade_saude unidade_saude
+      tags:
+      - Unidade Saude
+      description: Retorna os subtipos de uma unidade de saúde
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/tipo_logradouro":
+    get:
+      summary: tipo_logradouro unidade_saude
+      tags:
+      - Endereço
+      description: Retorna os tipos de logradouro
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/estados_habilitados":
+    get:
+      summary: estados_habilitados unidade_saude
+      tags:
+      - Endereço
+      description: Retorna os estados habilitados para cadastro
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/busca_cep/{cep}":
+    parameters:
+    - name: cep
+      in: path
+      description: cep
+      required: true
+      schema:
+        type: string
+    get:
+      summary: busca_cep unidade_saude
+      tags:
+      - Endereço
+      description: Retorna o endereço referente ao cep informado
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/local":
+    get:
+      summary: local unidade_saude
+      tags:
+      - Unidade Saude
+      description: Retorna os locais de atendimento de uma unidade de saúde
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/municipio/{municipio_id}":
+    parameters:
+    - name: municipio_id
+      in: path
+      description: municipio_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: municipio unidade_saude
+      tags:
+      - Endereço
+      description: Retorna o município referente ao id informado
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/{id}/servico_especializado":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: servico_especializado unidade_saude
+      tags:
+      - Serviço Especializado
+      description: Retorna os serviços especializados de uma unidade de saúde
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/{id}/equipamento":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: unidade_saude_equipamentos unidade_saude
+      tags:
+      - Equipamento
+      description: Retorna os equipamentos de uma unidade de saúde
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create_unidade_saude_equipamento unidade_saude
+      tags:
+      - Equipamento
+      description: Cria um equipamento para uma unidade de saúde
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/{id}/endereco_complementar":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: endereco_complementar unidade_saude
+      tags:
+      - Endereço
+      description: Retorna o endereço complementar de uma unidade de saúde
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/{id}/profissional_cadastrado":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: profissional_cadastrado unidade_saude
+      tags:
+      - Profissional Cadastrado
+      description: Retorna os profissionais cadastrados de uma unidade de saúde
+      parameters:
+      - name: unidade_saude
+        in: query
+        description: unidade_saude
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: page
+        schema:
+          type: integer
+      - name: per_page
+        in: query
+        description: per_page
+        schema:
+          type: integer
+      - name: order
+        in: query
+        description: order
+        schema:
+          type: string
+      - name: order_direction
+        in: query
+        description: order_direction
+        schema:
+          type: string
+      - name: nome
+        in: query
+        description: nome
+        schema:
+          type: string
+      - name: ocupacao_id
+        in: query
+        description: ocupacao_id
+        schema:
+          type: string
+      - name: ocupacao_nome
+        in: query
+        description: ocupacao_nome
+        schema:
+          type: string
+      - name: id
+        in: query
+        description: id
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude":
+    get:
+      summary: list unidade_saudes
+      tags:
+      - Unidade Saude
+      description: Retorna uma lista de unidades de saúde
+      parameters:
+      - name: page
+        in: query
+        description: page
+        schema:
+          type: integer
+      - name: per_page
+        in: query
+        description: per_page
+        schema:
+          type: integer
+      - name: term
+        in: query
+        description: term
+        schema:
+          type: string
+      - name: situation
+        in: query
+        description: situacao
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: status
+        schema:
+          type: string
+      - name: cnes
+        in: query
+        description: cnes
+        schema:
+          type: string
+      - name: order
+        in: query
+        description: order
+        schema:
+          type: string
+      - name: order_direction
+        in: query
+        description: order_direction
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create unidade_saude
+      tags:
+      - Unidade Saude
+      description: Cria uma unidade de saúde
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                codigo_cnes:
+                  type: string
+                classificacao_cnes_id:
+                  type: string
+                cnpj_numero:
+                  type: string
+                cpf_numero:
+                  type: string
+                tipo_pessoa_cnes_id:
+                  type: string
+                situacao_unidade_saude_id:
+                  type: string
+                descricao_subtipo_unidade_id:
+                  type: string
+                razao_social:
+                  type: string
+                cep:
+                  type: string
+                estado_id:
+                  type: string
+                municipio_id:
+                  type: string
+                tipo_logradouro_id:
+                  type: string
+                logradouro:
+                  type: string
+                numero:
+                  type: string
+                bairro:
+                  type: string
+                ibge:
+                  type: string
+                nome:
+                  type: string
+                tipo_unidade_id:
+                  type: string
+                local_id:
+                  type: string
+                complemento:
+                  type: string
+                telefone:
+                  type: string
+                email:
+                  type: string
+                url:
+                  type: string
+                administrador_id:
+                  type: string
+                horarios_funcionamento:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      dia_semana:
+                        type: string
+                      horario_inicio:
+                        type: string
+                      horario_encerramento:
+                        type: string
+                mantenedora:
+                  type: object
+                  properties:
+                    nome:
+                      type: string
+                    cnpj_numero:
+                      type: string
+                    cep:
+                      type: string
+                    estado_id:
+                      type: string
+                    municipio_id:
+                      type: string
+                    tipo_logradouro_id:
+                      type: string
+                    logradouro:
+                      type: string
+                    numero:
+                      type: string
+                    bairro:
+                      type: string
+                    complemento:
+                      type: string
+                    codigo_regiao_saude:
+                      type: string
+                    telefone:
+                      type: string
+                    agencia:
+                      type: string
+                    conta_corrente:
+                      type: string
+  "/api/unidade_saude/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show unidade_saude
+      tags:
+      - Unidade Saude
+      description: Retorna uma unidade de saúde
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update unidade_saude
+      tags:
+      - Unidade Saude
+      description: Atualiza uma unidade de saúde
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                codigo_cnes:
+                  type: string
+                classificacao_cnes_id:
+                  type: string
+                cnpj_numero:
+                  type: string
+                cpf_numero:
+                  type: string
+                tipo_pessoa_cnes_id:
+                  type: string
+                situacao_unidade_saude_id:
+                  type: string
+                descricao_subtipo_unidade_id:
+                  type: string
+                razao_social:
+                  type: string
+                cep:
+                  type: string
+                estado_id:
+                  type: string
+                municipio_id:
+                  type: string
+                tipo_logradouro_id:
+                  type: string
+                logradouro:
+                  type: string
+                numero:
+                  type: string
+                bairro:
+                  type: string
+                ibge:
+                  type: string
+                nome:
+                  type: string
+                tipo_unidade_id:
+                  type: string
+                local_id:
+                  type: string
+                complemento:
+                  type: string
+                telefone:
+                  type: string
+                email:
+                  type: string
+                url:
+                  type: string
+                administrador_id:
+                  type: string
+                horarios_funcionamento:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      dia_semana:
+                        type: string
+                      horario_inicio:
+                        type: string
+                      horario_encerramento:
+                        type: string
+                mantenedora:
+                  type: object
+                  properties:
+                    nome:
+                      type: string
+                    cnpj_numero:
+                      type: string
+                    cep:
+                      type: string
+                    estado_id:
+                      type: string
+                    municipio_id:
+                      type: string
+                    tipo_logradouro_id:
+                      type: string
+                    logradouro:
+                      type: string
+                    numero:
+                      type: string
+                    bairro:
+                      type: string
+                    complemento:
+                      type: string
+                    codigo_regiao_saude:
+                      type: string
+                    telefone:
+                      type: string
+                    agencia:
+                      type: string
+                    conta_corrente:
+                      type: string
+    delete:
+      summary: delete unidade_saude
+      tags:
+      - Unidade Saude
+      description: Faz uma exclusão lógica de uma unidade de saúde
+      responses:
+        '200':
+          description: successful
+  "/api/unidade_saude/{unidade_saude_id}/equipamento/{id}":
+    parameters:
+    - name: unidade_saude_id
+      in: path
+      description: unidade_saude_id
+      required: true
+      schema:
+        type: string
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    delete:
+      summary: delete_unidade_saude_equipamentos unidade_saude
+      tags:
+      - Equipamento
+      description: Deleta um equipamento de uma unidade de saúde
+      responses:
+        '200':
+          description: successful
+consumes:
+- application/json
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      scheme: bearer
+security:
+- Bearer: []
+servers:
+- url: https://saudesimples-api.qa.om30.cloud/
+- url: https://saudesimples-api.qa.om30.cloud/
+- url: http://localhost:3001
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com

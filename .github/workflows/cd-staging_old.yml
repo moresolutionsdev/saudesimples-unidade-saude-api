@@ -1,0 +1,29 @@
+name: CD Staging
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - stg*
+  workflow_dispatch:
+
+jobs:
+  pipeline:
+    uses: OM30/pipelines/.github/workflows/cd.yaml@main
+    with:
+      os_version: "ubuntu-latest"
+      service: "saudesimples-unidade-saude-api"
+      project: "prj-om30-bossabox-staging"
+      environment: "staging"
+      overlay: "apps/overlays/qa/"
+      ruby_version: "3.3.1"
+      migrate_db: true
+    secrets:
+      ENVS:  ${{ secrets.ENVS }}
+      GCLOUD_PROJECT_ID: ${{ secrets.GCLOUD_PROJECT_ID_STG }}
+      GCLOUD_SERVICE_KEY: ${{ secrets.GCLOUD_SERVICE_KEY_MASTER }}
+      SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      BUNDLE_RUBYGEMS__PKG__GITHUB__COM: ${{ secrets.BUNDLE_RUBYGEMS__PKG__GITHUB__COM }}
+      TOKEN: ${{ secrets.TOKEN_GITHUB }}
+
